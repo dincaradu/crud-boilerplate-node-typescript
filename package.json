@@ -36,14 +36,16 @@
   },
   "homepage": "https://github.com/dincaradu/crud-boilerplate-node-js-express-sequelize#readme",
   "dependencies": {
+    "chalk": "^4.1.2",
     "dotenv": "^10.0.0",
     "express": "^4.17.2"
   },
   "devDependencies": {
+    "@types/chalk": "^2.2.0",
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.13",
     "@types/fs-extra": "^9.0.13",
-    "@types/node": "^14.17.5",
+    "@types/node": "^14.18.3",
     "@types/shelljs": "^0.8.10",
     "fs-extra": "^10.0.0",
     "nodemon": "^2.0.15",
