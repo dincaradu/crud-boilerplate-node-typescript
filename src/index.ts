@@ -1,5 +1,6 @@
 import express from "express";
 import { ENVIRONMENT, PORT } from "./config/env.config";
+import { Log, Start } from './lib/pretty-logging';
 
 const app = express();
 
@@ -10,6 +11,6 @@ app.get( "/", ( req, res ) => {
 
 // start the Express server
 app.listen( PORT, () => {
-    console.log( `Environment: ${ ENVIRONMENT }` );
-    console.log( `Server started at http://localhost:${ PORT }` );
+    Log( `Environment: ${ ENVIRONMENT }`, true );
+    Start( `Server started at http://localhost:${ PORT }` );
 });
