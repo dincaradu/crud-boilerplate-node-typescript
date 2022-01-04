@@ -1,3 +1,4 @@
+import { ProfileRoutes } from './profile.routes';
 
 export const AppRoutes = (app: any) => {
   // define a route handler for the default home page
@@ -7,4 +8,7 @@ export const AppRoutes = (app: any) => {
     res.json({message: "Hello world! Welcome to basic CRUD API" });
   });
 
+
+  // Call user routes generator
+  ProfileRoutes(app);
 };
