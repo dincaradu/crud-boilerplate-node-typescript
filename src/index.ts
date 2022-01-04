@@ -1,3 +1,4 @@
+import cors from "cors";
 import express from "express";
 import { ENVIRONMENT, PORT } from "./config/env.config";
 import { Log, Start } from './lib/pretty-logging';
@@ -10,12 +11,12 @@ app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
-// define a route handler for the default home page
-app.post( "/", ( req, res ) => {
-    console.log( 'Request:', req.body, req.params, req.query);
+// set CORS options
+app.use(cors({
+    origin: 'http://localhost:2000/',
+    methods: ['GET', 'POST','DELETE','UPDATE','PUT','PATCH']
+}));
 
-    res.json({message: "Hello world! Welcome to basic CRUD API" });
-} );
 
 // start the Express server
 app.listen( PORT, () => {
