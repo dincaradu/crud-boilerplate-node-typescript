@@ -2,6 +2,7 @@ import cors from "cors";
 import express from "express";
 import { ENVIRONMENT, PORT } from "./config/env.config";
 import { Log, Start } from './lib/pretty-logging';
+import { AppRoutes } from "./routes/app.routes";
 
 const app = express();
 
@@ -17,8 +18,10 @@ app.use(cors({
     methods: ['GET', 'POST','DELETE','UPDATE','PUT','PATCH']
 }));
 
+// Load routes configurator
+AppRoutes(app);
 
-// start the Express server
+// Start the Express server
 app.listen( PORT, () => {
     Log( `Environment: ${ ENVIRONMENT }`, true );
     Start( `Server started at http://localhost:${ PORT }` );
