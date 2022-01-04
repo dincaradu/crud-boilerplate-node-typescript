@@ -1,3 +1,4 @@
+import { CrudRoutes } from '../CRUD/crud.routes';
 import { ProfileRoutes } from './profile.routes';
 
 export const AppRoutes = (app: any) => {
@@ -8,6 +9,8 @@ export const AppRoutes = (app: any) => {
     res.json({message: "Hello world! Welcome to basic CRUD API" });
   });
 
+  // Call generic CRUD routes generator
+  // CrudRoutes(app, 'test');
 
   // Call user routes generator
   ProfileRoutes(app);
