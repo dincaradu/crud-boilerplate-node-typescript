@@ -2,7 +2,7 @@
   "name": "crud-boilerplate",
   "version": "1.0.0",
   "description": "This a CRUD boilerplate written in Typescript with Node.js, Express, Sequelize, MySQL.",
-  "main": "dist/index.js",
+  "main": "dist/server.js",
   "scripts": {
     "clean": "rimraf dist/*",
     "copy-assets": "ts-node tools/copyAssets",

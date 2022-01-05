@@ -5,6 +5,7 @@ dotenv.config();
 // Environment variables
 export const PORT = process.env.PORT;
 export const ENVIRONMENT = process.env.NODE_ENV;
+export const BASE_PATH = process.env.BASE_PATH;
 
 // Logging flags
 export const ALLOW_LOGS = process.env.ALLOW_LOGS === 'true';

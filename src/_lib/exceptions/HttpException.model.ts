@@ -1,4 +1,4 @@
-import { Log } from "../helpers/pretty-logging.helper";
+import { Err } from "../helpers/pretty-logging.helper";
 
 /**
  * HttpException model
@@ -10,7 +10,7 @@ class HttpException extends Error {
   constructor(status: number, message: string) {
     super(message);
 
-    Error(`HTTP Exception - Status: ${ status } - Message: ${ message }`)
+    Err(`HTTP Exception - Status: ${ status } - Message: ${ message }`)
 
     this.status = status;
     this.message = message;

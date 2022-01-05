@@ -1,5 +1,5 @@
 import chalk from 'chalk';
-import { ALLOW_ERRORS, ALLOW_LOGS, ALLOW_WARNINGS } from '../../config/env.config';
+import { ALLOW_ERRORS, ALLOW_LOGS, ALLOW_WARNINGS } from '../../_config/env.config';
 
 /**
  * Log() This function forwards the Log to the generic logging function
@@ -20,13 +20,13 @@ export const Log = (output: any, invert = false, bold = false) => logging(output
 export const Start = (output: any, invert = false, bold = false) => logging(output, invert, bold, chalk.green, chalk.bgGreen, console.log, ALLOW_LOGS);
 
 /**
- * Error() This function forwards the Error log to the generic logging function
+ * Err() This function forwards the Error log to the generic logging function
  * @param output Any (default: '') This is going to be logged in the console
  * @param invert Boolean (default: false) If set to true this flag colors the background instead of the text
  * @param bold Boolean (default: false) This flag makes the Chalk text bold.
  * @returns Nothing, but writes to logs through console.error
  */
-export const Error = (output: any, invert = false, bold = false) => logging(output, invert, bold, chalk.red, chalk.bgRed, console.error, ALLOW_ERRORS);
+export const Err = (output: any, invert = false, bold = false) => logging(output, invert, bold, chalk.red, chalk.bgRed, console.error, ALLOW_ERRORS);
 
 /**
  * Warn() This function forwards the Warning log to the generic logging function
