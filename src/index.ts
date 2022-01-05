@@ -4,6 +4,9 @@ import { ENVIRONMENT, PORT } from "./config/env.config";
 import { Log, Start } from './lib/pretty-logging';
 import { AppRoutes } from "./routes/app.routes";
 
+// Utility functions
+import httpErrorMiddleware from "./lib/middleware/http-error.middleware";
+
 const app = express();
 
 // parse requests of content-type - application/json
@@ -17,6 +20,9 @@ app.use(cors({
     origin: 'http://localhost:2000/',
     methods: ['GET', 'POST','DELETE','UPDATE','PUT','PATCH']
 }));
+
+// Add middleware for intercepting errors
+app.use(httpErrorMiddleware);
 
 // Load routes configurator
 AppRoutes(app);
