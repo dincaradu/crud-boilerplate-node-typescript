@@ -1,5 +1,6 @@
-import { CrudRoutes } from '../CRUD/crud.routes';
-import { ProfileRoutes } from './profile.routes';
+// Routes
+import { CrudRoutes } from './CRUD/crud.routes';
+import { ProfileRoutes } from './modules/profile/profile.routes';
 
 export const AppRoutes = (app: any) => {
   // define a route handler for the default home page
