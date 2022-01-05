@@ -1,4 +1,4 @@
-import { Log, Warn } from '../lib/pretty-logging';
+import { Log, Warn } from '../lib/helpers/pretty-logging.helper';
 
 const create = (req: any, res: any) => {
   Warn( 'Create has been called' );

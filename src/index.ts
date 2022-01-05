@@ -1,8 +1,8 @@
 import cors from "cors";
 import express from "express";
 import { ENVIRONMENT, PORT } from "./config/env.config";
-import { Log, Start } from './lib/pretty-logging';
 import { AppRoutes } from "./routes/app.routes";
+import { Log, Start } from './lib/helpers/pretty-logging.helper';
 
 // Utility functions
 import httpErrorMiddleware from "./lib/middleware/http-error.middleware";
