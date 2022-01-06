@@ -27,7 +27,7 @@ class App {
         this.app.listen(PORT, () => {
             Log(`Environment: ${ENVIRONMENT}`, true);
             Start(`Database: ${DB.user}@${DB.host}/${DB.name}`)
-            Start(`Server started at http://localhost:${PORT}`);
+            Start(`Server started at http://localhost:${PORT}${BASE_PATH}`);
         });
     }
 
