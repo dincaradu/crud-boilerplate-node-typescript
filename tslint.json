@@ -8,6 +8,7 @@
       "trailing-comma": [ false ],
       "no-console": false,
       "whitespace": [true, "check-branch", "check-operator", "check-typecast"],
+      "eofline": true,
       "typedef-whitespace": [
         true,
         {
