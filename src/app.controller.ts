@@ -9,11 +9,14 @@ import { BASE_PATH, DB, ENVIRONMENT, PORT } from "./_config/env.config";
 import httpErrorMiddleware from "./_lib/middleware/http-error.middleware";
 import { Log, Start } from './_lib/helpers/pretty-logging.helper';
 
+// Import type definitions
+import Controller from './interfaces/controller.interface';
+
 class App {
     public app: Application;
     public port: string;
 
-    constructor(controllers: any) {
+    constructor(controllers: Controller[]) {
         this.app = express();
         this.port = PORT;
 
@@ -45,9 +48,9 @@ class App {
         }));
     }
 
-    private initializeControllers(controllers: any[]): void {
+    private initializeControllers(controllers: Controller[]): void {
         // Self explanatory, but the purpose of the iteration is declaration of routes and initialization of the controllers
-        controllers.forEach((controller) => {
+        controllers.forEach((controller: Controller) => {
             this.app.use(BASE_PATH, controller.router);
         });
     }
