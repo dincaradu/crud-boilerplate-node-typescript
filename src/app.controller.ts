@@ -19,6 +19,16 @@ class App {
 
         this.initializeMiddlewares();
         this.initializeControllers(controllers);
+        this.initializeErrorHandling();
+    }
+
+    public listen(): void {
+        // Start the Express server
+        this.app.listen(PORT, () => {
+            Log(`Environment: ${ENVIRONMENT}`, true);
+            Start(`Database: ${DB.user}@${DB.host}/${DB.name}`)
+            Start(`Server started at http://localhost:${PORT}`);
+        });
     }
 
     private initializeMiddlewares(): void {
@@ -33,9 +43,6 @@ class App {
             origin: 'http://localhost:2000/',
             methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH']
         }));
-
-        // Add middleware for intercepting errors
-        this.app.use(httpErrorMiddleware);
     }
 
     private initializeControllers(controllers: any[]): void {
@@ -45,13 +52,9 @@ class App {
         });
     }
 
-    public listen(): void {
-        // Start the Express server
-        this.app.listen(PORT, () => {
-            Log(`Environment: ${ENVIRONMENT}`, true);
-            Start(`Database: ${DB.user}@${DB.host}/${DB.name}`)
-            Start(`Server started at http://localhost:${PORT}`);
-        });
+    private initializeErrorHandling(): void {
+        // Add middleware for intercepting errors
+        this.app.use(httpErrorMiddleware);
     }
 }
 

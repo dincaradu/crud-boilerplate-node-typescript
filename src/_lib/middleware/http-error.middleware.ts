@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import HttpException from '../exceptions/HttpException.model';
+import HttpException from '../exceptions/http-exception.model';
 
 /**
  * HttpErrorMiddleware This function checks the request for errors
@@ -8,7 +8,7 @@ import HttpException from '../exceptions/HttpException.model';
  * @param response Response This is the response object
  * @param next NextFunction Callback argument to the middleware function, called "next" by convention
  */
-function httpErrorMiddleware(error: HttpException, request: Request, response: Response, next: NextFunction) {
+function HttpErrorMiddleware(error: HttpException, request: Request, response: Response, next: NextFunction) {
   const status = error.status || 500;
   const message = error.message || 'Something went wrong';
 
@@ -20,4 +20,4 @@ function httpErrorMiddleware(error: HttpException, request: Request, response: R
     })
 }
 
-export default httpErrorMiddleware;
+export default HttpErrorMiddleware;
