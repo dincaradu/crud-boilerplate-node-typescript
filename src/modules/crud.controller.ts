@@ -28,32 +28,32 @@ class CrudController {
     this.router.delete(this.entities, this.deleteAll);
   }
 
-  create = (req: Request, res: Response) => {
+  create = (req: Request, res: Response, next: NextFunction) => {
     Warn('Create has been called');
     res.json({ message: 'Create has been called' });
   }
 
-  findAll = (req: Request, res: Response) => {
+  findAll = (req: Request, res: Response, next: NextFunction) => {
     Warn('findAll has been called');
     res.json({ message: 'findAll has been called' });
   }
 
-  findOne = (req: Request, res: Response) => {
+  findOne = (req: Request, res: Response, next: NextFunction) => {
     Warn('findOne has been called');
     res.json({ message: 'findOne has been called' });
   }
 
-  update = (req: Request, res: Response) => {
+  update = (req: Request, res: Response, next: NextFunction) => {
     Warn('update has been called');
     res.json({ message: 'update has been called' });
   }
 
-  remove = (req: Request, res: Response) => {
+  remove = (req: Request, res: Response, next: NextFunction) => {
     Warn('remove has been called');
     res.json({ message: 'remove has been called' });
   }
 
-  deleteAll = (req: Request, res: Response) => {
+  deleteAll = (req: Request, res: Response, next: NextFunction) => {
     Warn('deleteAll has been called');
     res.json({ message: 'deleteAll has been called' });
   }

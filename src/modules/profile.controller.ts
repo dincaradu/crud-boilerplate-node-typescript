@@ -1,5 +1,5 @@
 // 3rd party modules
-import express, { Request, Response } from 'express';
+import express, { Request, Response, NextFunction } from 'express';
 
 // Utility functions
 import { Warn } from '../_lib/helpers/pretty-logging.helper';
@@ -29,32 +29,32 @@ class ProfileController {
     this.router.put(this.path + 'profile', this.updateProfile);
   }
 
-  private login = (req: Request, res: Response) => {
+  private login = (req: Request, res: Response, next: NextFunction) => {
     Warn( 'Login has been called' );
     res.json({message: 'Login has been called'});
   }
 
-  private register = (req: Request, res: Response) => {
+  private register = (req: Request, res: Response, next: NextFunction) => {
     Warn( 'register has been called' );
     res.json({message: 'register has been called'});
   }
 
-  private resetPassword = (req: Request, res: Response) => {
+  private resetPassword = (req: Request, res: Response, next: NextFunction) => {
     Warn( 'resetPassword has been called' );
     res.json({message: 'resetPassword has been called'});
   }
 
-  private updatePassword = (req: Request, res: Response) => {
+  private updatePassword = (req: Request, res: Response, next: NextFunction) => {
     Warn( 'Update password has been called' );
     res.json({message: 'Update password has been called'});
   }
 
-  private getProfile = (req: Request, res: Response) => {
+  private getProfile = (req: Request, res: Response, next: NextFunction) => {
     Warn( 'Get profile has been called' );
     res.json({message: 'Get profile has been called'});
   }
 
-  private updateProfile = (req: Request, res: Response) => {
+  private updateProfile = (req: Request, res: Response, next: NextFunction) => {
     Warn( 'Update profile has been called' );
     res.json({message: 'Update profile has been called'});
   }

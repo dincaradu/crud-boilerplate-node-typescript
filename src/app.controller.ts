@@ -6,8 +6,8 @@ import express, { Application } from "express";
 import { BASE_PATH, DB, ENVIRONMENT, PORT } from "./_config/env.config";
 
 // Utility functions
-import httpErrorMiddleware from "./_lib/middleware/http-error.middleware";
 import { Log, Start } from './_lib/helpers/pretty-logging.helper';
+import httpErrorMiddleware from "./_lib/middleware/http-error.middleware";
 
 // Import type definitions
 import Controller from './interfaces/controller.interface';
