@@ -1,3 +1,4 @@
+// Utility functions
 import { Err } from "../helpers/pretty-logging.helper";
 
 /**

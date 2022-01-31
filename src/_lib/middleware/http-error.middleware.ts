@@ -1,5 +1,8 @@
+// 3rd party modules
 import { NextFunction, Request, Response } from 'express';
-import HttpException from '../exceptions/http-exception.model';
+
+// Exceptions import
+import HttpException from '../exceptions/http.exception';
 
 /**
  * HttpErrorMiddleware This function checks the request for errors

@@ -1,4 +1,5 @@
-import HttpException from "./http-exception.model";
+// Exception import
+import HttpException from "./http.exception";
 
 /**
  * Entity not found exception extends http exception
